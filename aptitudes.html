@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aptitudes — Manuel ValDEV</title>
+  <meta name="description" content="Aptitudes de Manuel Valdés: liderazgo, comunicación, resolución de problemas y orientación a resultados." />
+  <link rel="icon" type="image/png" href="assets/avatar-head.png" />
+  <script>
+    document.documentElement.dataset.theme =
+      localStorage.getItem("valdev-theme") ||
+      (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  </script>
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/aptitudes.css" />
+</head>
+<body class="aptitudes-page has-dock">
+
+  <header class="site-nav">
+    <div class="nav-inner container">
+      <a href="index.html" class="brand">Val<span>DEV</span></a>
+      <nav class="nav-links">
+        <a href="proyectos.html" data-i18n="nav.proyectos">Proyectos</a>
+        <a href="stack.html" data-i18n="nav.stack">Stack</a>
+        <a href="aptitudes.html" data-i18n="nav.aptitudes">Aptitudes</a>
+        <a href="certificaciones.html" data-i18n="nav.certs">Formación</a>
+        <a href="redes.html" data-i18n="nav.redes">Contacto</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Cambiar tema"></button>
+        <button id="langToggle" class="lang-toggle" aria-label="Cambiar idioma">
+          <span class="lang-opt" data-lang="es">ES</span>/<span class="lang-opt" data-lang="en">EN</span>
+        </button>
+        <button id="menuBtn" class="icon-btn menu-btn" aria-label="Menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="page-head centered">
+        <p class="hand-note phone-note">Más allá del código</p>
+        <h1 class="page-title fan-title"><span data-i18n="a.t1">cuenta conmigo si</span> <em data-i18n="a.t2">necesitas</em> :</h1>
+      </div>
+
+      <!-- Abanico de tarjetas con stickers, como la referencia -->
+      <div class="card-fan reveal">
+
+        <article class="apt-card" style="--cc:#2e6b4f; --rot:-9deg; --y:26px">
+          <span class="sticker" style="--srot:-12deg">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2.5a6.5 6.5 0 0 0-6.16 8.6L2.6 17.34a1.6 1.6 0 0 0-.47 1.13v2.4a.63.63 0 0 0 .63.63h2.4c.42 0 .83-.17 1.13-.47l.9-.9v-1.87h1.87l1.55-1.55A6.5 6.5 0 1 0 15 2.5zm1.75 3.25a2 2 0 1 1-2 2 2 2 0 0 1 2-2z"/></svg>
+          </span>
+          <h2 data-i18n="a.p1.t">liderazgo</h2>
+          <ul>
+            <li data-i18n="a.p1.c1">Liderazgo inspirador</li>
+            <li data-i18n="a.p1.c2">Colaboración proactiva</li>
+            <li data-i18n="a.p1.c3">Scrum Master</li>
+          </ul>
+        </article>
+
+        <article class="apt-card" style="--cc:#5b6ee1; --rot:-4deg; --y:6px">
+          <span class="sticker" style="--srot:9deg">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-4.1 12.67c.66.48 1.1 1.2 1.1 2V17.5h6v-.83c0-.8.44-1.52 1.1-2A7 7 0 0 0 12 2zM9.25 19h5.5v1.5A1.5 1.5 0 0 1 13.25 22h-2.5a1.5 1.5 0 0 1-1.5-1.5z"/></svg>
+          </span>
+          <h2 data-i18n="a.p2.t">comunicación</h2>
+          <ul>
+            <li data-i18n="a.p2.c1">Comunicación efectiva</li>
+            <li data-i18n="a.p2.c2">Negociación con clientes</li>
+            <li data-i18n="a.p2.c3">Facilitación ágil</li>
+          </ul>
+        </article>
+
+        <article class="apt-card" style="--cc:#f2662d; --rot:1deg; --y:0px">
+          <span class="sticker" style="--srot:-7deg">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2h6v2h-1v4.1l4.93 8.55A2.3 2.3 0 0 1 16.94 20H7.06a2.3 2.3 0 0 1-1.99-3.45L10 8.1V4H9zm3 8.6-2.53 4.4h5.06z"/></svg>
+          </span>
+          <h2 data-i18n="a.p3.t">resolución</h2>
+          <ul>
+            <li data-i18n="a.p3.c1">Resolución de problemas</li>
+            <li data-i18n="a.p3.c3">Pensamiento analítico</li>
+          </ul>
+        </article>
+
+        <article class="apt-card" style="--cc:#a23557; --rot:5deg; --y:8px">
+          <span class="sticker" style="--srot:11deg">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.3 16.2 4.9 11.8l-2.1 2.1 6.5 6.5L21.2 8.5l-2.1-2.1z"/></svg>
+          </span>
+          <h2 data-i18n="a.p4.t">resultados</h2>
+          <ul>
+            <li data-i18n="a.p4.c1">Orientación a resultados</li>
+            <li data-i18n="a.p4.c3">Proactividad</li>
+          </ul>
+        </article>
+
+        <article class="apt-card apt-card-light" style="--cc:#e9c2e6; --rot:10deg; --y:30px">
+          <span class="sticker" style="--srot:-10deg">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.7-4.9-10.2-9.5C.2 8.4 2.2 4.8 5.7 4.8c2 0 3.4 1.1 4.3 2.6.9-1.5 2.3-2.6 4.3-2.6 3.5 0 5.5 3.6 3.9 6.7C15.7 16.1 12 21 12 21z"/></svg>
+          </span>
+          <h2 data-i18n="a.p5.t">creatividad</h2>
+          <ul>
+            <li data-i18n="a.p4.c2">Creatividad e innovación</li>
+            <li data-i18n="a.p3.c2">Aprendizaje acelerado</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Dock global de navegación -->
+  <nav class="dock" id="dock" aria-label="Navegación rápida">
+    <a class="dock-item" href="index.html" style="--di:#0fb5a3">
+      <span class="dock-tip" data-i18n="dock.home">Inicio</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 11.2h2.6v8.3a1 1 0 0 0 1 1H10v-5.8h4v5.8h3.9a1 1 0 0 0 1-1v-8.3h2.6z"/></svg>
+    </a>
+    <a class="dock-item" href="proyectos.html" style="--di:#0c6e64">
+      <span class="dock-tip" data-i18n="dock.proyectos">Proyectos</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h3.9a2 2 0 0 1 1.42.59L12.2 6h6.3A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z"/></svg>
+    </a>
+    <a class="dock-item" href="stack.html" style="--di:#3a4149">
+      <span class="dock-tip" data-i18n="dock.stack">Stack técnico</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 6.6a5.3 5.3 0 0 1-7.1 6.7l-7 7a2.2 2.2 0 1 1-3.1-3.1l7-7a5.3 5.3 0 0 1 6.7-7.1l-2.9 2.9.8 2.7 2.7.8z"/></svg>
+    </a>
+    <a class="dock-item" href="aptitudes.html" style="--di:#7c6cf0">
+      <span class="dock-tip" data-i18n="dock.aptitudes">Aptitudes</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 2.5a2.25 2.25 0 0 0-2.25 2.25v.75H8A1.5 1.5 0 0 0 6.5 7v3.25h-.75a2.25 2.25 0 1 0 0 4.5h.75V18A1.5 1.5 0 0 0 8 19.5h3.25v-.75a2.25 2.25 0 1 1 4.5 0v.75H19a1.5 1.5 0 0 0 1.5-1.5v-3.25h-.75a2.25 2.25 0 1 1 0-4.5h.75V7A1.5 1.5 0 0 0 19 5.5h-3.25v-.75A2.25 2.25 0 0 0 13.5 2.5z"/></svg>
+    </a>
+    <a class="dock-item" href="certificaciones.html" style="--di:#c99a12">
+      <span class="dock-tip" data-i18n="dock.certs">Formación</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1.5 8 12 13l8.5-4.05V15h2V8zM5 12.9v3.6c0 1.6 3.1 3 7 3s7-1.4 7-3v-3.6l-7 3.3z"/></svg>
+    </a>
+    <a class="dock-item" href="redes.html" style="--di:#e0567c">
+      <span class="dock-tip" data-i18n="dock.redes">Contacto</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 3.5h15A1.5 1.5 0 0 1 21 5v11a1.5 1.5 0 0 1-1.5 1.5H9.2L4.4 21A.9.9 0 0 1 3 20.3V5a1.5 1.5 0 0 1 1.5-1.5z"/></svg>
+    </a>
+    <span class="dock-sep"></span>
+    <a class="dock-item" href="assets/Manuel_Valdes_CV.pdf" download style="--di:#5d6570">
+      <span class="dock-tip" data-i18n="dock.cv">Descargar CV</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 2h6.8L18 6.7V20a2 2 0 0 1-2 2H6.5a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zM12 9v6.1l2.1-2.1 1.4 1.4-4.5 4.5-4.5-4.5 1.4-1.4L10 15.1V9z"/></svg>
+    </a>
+  </nav>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span class="year"></span> Manuel Alejandro Valdés Zúniga</p>
+      <div class="footer-contact">
+        <a href="tel:+50370837578">+503 7083-7578</a>
+        <a href="mailto:manuel.valdes@catolica.edu.sv">manuel.valdes@catolica.edu.sv</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/shared.js"></script>
+</body>
+</html>

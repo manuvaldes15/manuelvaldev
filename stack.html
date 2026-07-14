@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stack técnico — Manuel ValDEV</title>
+  <meta name="description" content="Stack técnico de Manuel Valdés: Java, Laravel, Spring Boot, PostgreSQL, Docker y más." />
+  <link rel="icon" type="image/png" href="assets/avatar-head.png" />
+  <script>
+    document.documentElement.dataset.theme =
+      localStorage.getItem("valdev-theme") ||
+      (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  </script>
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/stack.css" />
+</head>
+<body class="stack-page has-dock">
+
+  <header class="site-nav">
+    <div class="nav-inner container">
+      <a href="index.html" class="brand">Val<span>DEV</span></a>
+      <nav class="nav-links">
+        <a href="proyectos.html" data-i18n="nav.proyectos">Proyectos</a>
+        <a href="stack.html" data-i18n="nav.stack">Stack</a>
+        <a href="aptitudes.html" data-i18n="nav.aptitudes">Aptitudes</a>
+        <a href="certificaciones.html" data-i18n="nav.certs">Formación</a>
+        <a href="redes.html" data-i18n="nav.redes">Contacto</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Cambiar tema"></button>
+        <button id="langToggle" class="lang-toggle" aria-label="Cambiar idioma">
+          <span class="lang-opt" data-lang="es">ES</span>/<span class="lang-opt" data-lang="en">EN</span>
+        </button>
+        <button id="menuBtn" class="icon-btn menu-btn" aria-label="Menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="page-head">
+        <p class="page-kicker" data-i18n="s.kicker">Herramientas de trabajo</p>
+        <h1 class="page-title" data-i18n="s.title">Stack técnico</h1>
+        <p class="hand-note" data-i18n="s.note">los rellenos son mi día a día</p>
+      </div>
+
+      <section class="pill-group reveal">
+        <h2 data-i18n="s.g1">Lenguajes &amp; Frameworks</h2>
+        <ul class="pills">
+          <li class="fill" style="--pc:#f5c518; --i:0">Java</li>
+          <li class="fill" style="--pc:#7c6cf0; --i:1">C#</li>
+          <li style="--i:2">PHP</li>
+          <li class="fill" style="--pc:#f4795b; --i:3">Laravel</li>
+          <li style="--i:4">ASP.NET</li>
+          <li class="fill" style="--pc:#2fa96e; --i:5">Spring Boot</li>
+          <li class="fill" style="--pc:#f5c518; --i:6">JavaScript</li>
+          <li style="--i:7">HTML5</li>
+          <li style="--i:8">CSS3</li>
+          <li class="fill" style="--pc:#63b3e4; --i:9">Tailwind</li>
+          <li style="--i:10">Bootstrap</li>
+        </ul>
+      </section>
+
+      <section class="pill-group reveal">
+        <h2 data-i18n="s.g2">Bases de datos</h2>
+        <ul class="pills">
+          <li style="--i:0">Oracle SQL</li>
+          <li class="fill" style="--pc:#63b3e4; --i:1">PostgreSQL</li>
+          <li style="--i:2">SQL Server</li>
+          <li class="fill" style="--pc:#0fb5a3; --i:3">MySQL</li>
+        </ul>
+      </section>
+
+      <section class="pill-group reveal">
+        <h2 data-i18n="s.g3">Infraestructura &amp; Sistemas</h2>
+        <ul class="pills">
+          <li class="fill" style="--pc:#63b3e4; --i:0">Docker</li>
+          <li class="fill" style="--pc:#f4795b; --i:1">Git</li>
+          <li style="--i:2">GitHub</li>
+          <li class="fill" style="--pc:#f5c518; --i:3">Linux</li>
+          <li style="--i:4">Windows</li>
+        </ul>
+      </section>
+
+      <section class="pill-group reveal">
+        <h2 data-i18n="s.g4">Diseño &amp; Multimedia</h2>
+        <ul class="pills">
+          <li class="fill" style="--pc:#e0567c; --i:0">Figma</li>
+          <li class="fill" style="--pc:#f4795b; --i:1">Illustrator</li>
+          <li class="fill" style="--pc:#63b3e4; --i:2">Photoshop</li>
+          <li class="fill" style="--pc:#7c6cf0; --i:3">DaVinci Resolve</li>
+          <li style="--i:4">UX/UI</li>
+        </ul>
+      </section>
+
+      <section class="pill-group reveal">
+        <h2 data-i18n="s.langs">Idiomas</h2>
+        <ul class="pills">
+          <li class="fill" style="--pc:#0fb5a3; --i:0" data-i18n="s.es">Español — nativo</li>
+          <li style="--i:1" data-i18n="s.en">Inglés — intermedio</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <!-- Dock global de navegación -->
+  <nav class="dock" id="dock" aria-label="Navegación rápida">
+    <a class="dock-item" href="index.html" style="--di:#0fb5a3">
+      <span class="dock-tip" data-i18n="dock.home">Inicio</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 11.2h2.6v8.3a1 1 0 0 0 1 1H10v-5.8h4v5.8h3.9a1 1 0 0 0 1-1v-8.3h2.6z"/></svg>
+    </a>
+    <a class="dock-item" href="proyectos.html" style="--di:#0c6e64">
+      <span class="dock-tip" data-i18n="dock.proyectos">Proyectos</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h3.9a2 2 0 0 1 1.42.59L12.2 6h6.3A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z"/></svg>
+    </a>
+    <a class="dock-item" href="stack.html" style="--di:#3a4149">
+      <span class="dock-tip" data-i18n="dock.stack">Stack técnico</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 6.6a5.3 5.3 0 0 1-7.1 6.7l-7 7a2.2 2.2 0 1 1-3.1-3.1l7-7a5.3 5.3 0 0 1 6.7-7.1l-2.9 2.9.8 2.7 2.7.8z"/></svg>
+    </a>
+    <a class="dock-item" href="aptitudes.html" style="--di:#7c6cf0">
+      <span class="dock-tip" data-i18n="dock.aptitudes">Aptitudes</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 2.5a2.25 2.25 0 0 0-2.25 2.25v.75H8A1.5 1.5 0 0 0 6.5 7v3.25h-.75a2.25 2.25 0 1 0 0 4.5h.75V18A1.5 1.5 0 0 0 8 19.5h3.25v-.75a2.25 2.25 0 1 1 4.5 0v.75H19a1.5 1.5 0 0 0 1.5-1.5v-3.25h-.75a2.25 2.25 0 1 1 0-4.5h.75V7A1.5 1.5 0 0 0 19 5.5h-3.25v-.75A2.25 2.25 0 0 0 13.5 2.5z"/></svg>
+    </a>
+    <a class="dock-item" href="certificaciones.html" style="--di:#c99a12">
+      <span class="dock-tip" data-i18n="dock.certs">Formación</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1.5 8 12 13l8.5-4.05V15h2V8zM5 12.9v3.6c0 1.6 3.1 3 7 3s7-1.4 7-3v-3.6l-7 3.3z"/></svg>
+    </a>
+    <a class="dock-item" href="redes.html" style="--di:#e0567c">
+      <span class="dock-tip" data-i18n="dock.redes">Contacto</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 3.5h15A1.5 1.5 0 0 1 21 5v11a1.5 1.5 0 0 1-1.5 1.5H9.2L4.4 21A.9.9 0 0 1 3 20.3V5a1.5 1.5 0 0 1 1.5-1.5z"/></svg>
+    </a>
+    <span class="dock-sep"></span>
+    <a class="dock-item" href="assets/Manuel_Valdes_CV.pdf" download style="--di:#5d6570">
+      <span class="dock-tip" data-i18n="dock.cv">Descargar CV</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 2h6.8L18 6.7V20a2 2 0 0 1-2 2H6.5a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zM12 9v6.1l2.1-2.1 1.4 1.4-4.5 4.5-4.5-4.5 1.4-1.4L10 15.1V9z" fill-rule="evenodd"/></svg>
+    </a>
+  </nav>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span class="year"></span> Manuel Alejandro Valdés Zúniga</p>
+      <div class="footer-contact">
+        <a href="tel:+50370837578">+503 7083-7578</a>
+        <a href="mailto:manuel.valdes@catolica.edu.sv">manuel.valdes@catolica.edu.sv</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/shared.js"></script>
+</body>
+</html>

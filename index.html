@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manuel ValDEV — Ingeniero en Desarrollo de Software</title>
+  <meta name="description" content="Portafolio de Manuel Alejandro Valdés Zúniga — Ingeniero en Desarrollo de Software. Santa Ana, El Salvador." />
+  <link rel="icon" type="image/png" href="assets/avatar-head.png" />
+  <script>
+    /* Pinta el tema antes del primer render para evitar el destello */
+    document.documentElement.dataset.theme =
+      localStorage.getItem("valdev-theme") ||
+      (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  </script>
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/index.css" />
+</head>
+<body class="has-dock">
+
+  <header class="site-nav">
+    <div class="nav-inner container">
+      <a href="index.html" class="brand">Val<span>DEV</span></a>
+      <nav class="nav-links">
+        <a href="proyectos.html" data-i18n="nav.proyectos">Proyectos</a>
+        <a href="stack.html" data-i18n="nav.stack">Stack</a>
+        <a href="aptitudes.html" data-i18n="nav.aptitudes">Aptitudes</a>
+        <a href="certificaciones.html" data-i18n="nav.certs">Formación</a>
+        <a href="redes.html" data-i18n="nav.redes">Contacto</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Cambiar tema"></button>
+        <button id="langToggle" class="lang-toggle" aria-label="Cambiar idioma">
+          <span class="lang-opt" data-lang="es">ES</span>/<span class="lang-opt" data-lang="en">EN</span>
+        </button>
+        <button id="menuBtn" class="icon-btn menu-btn" aria-label="Menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-stage" id="heroStage">
+      <span class="corner-note stage-corner tl">Portafolio — 2026</span>
+      <span class="corner-note stage-corner tr" data-i18n="hero.loc">Santa Ana, El Salvador</span>
+
+      <!-- Tarjetas de proyectos flotando alrededor (como la referencia del collage) -->
+      <a href="proyectos.html" class="float-card" style="--fx:4%;  --fy:16%; --fd:0.5; --fr:-4deg;  --delay:0s">
+        <span class="float-thumb" style="--g1:#0fb5a3;--g2:#0c6e64"></span><span>Migración Java</span>
+      </a>
+      <a href="proyectos.html" class="float-card" style="--fx:24%; --fy:5%;  --fd:0.9; --fr:2deg;   --delay:0.6s">
+        <span class="float-thumb" style="--g1:#f4795b;--g2:#e0567c"></span><span>Sellify</span>
+      </a>
+      <a href="proyectos.html" class="float-card" style="--fx:57%; --fy:7%;  --fd:0.7; --fr:-2deg;  --delay:1.1s">
+        <span class="float-thumb" style="--g1:#7c6cf0;--g2:#4f42b5"></span><span>Odontograma Web</span>
+      </a>
+      <a href="proyectos.html" class="float-card" style="--fx:87%; --fy:20%; --fd:1;   --fr:3deg;   --delay:0.3s">
+        <span class="float-thumb" style="--g1:#f5c518;--g2:#f4795b"></span><span>DoubleViStudio</span>
+      </a>
+      <a href="proyectos.html" class="float-card" style="--fx:86%; --fy:66%; --fd:0.6; --fr:-3deg;  --delay:0.9s">
+        <span class="float-thumb" style="--g1:#2fa96e;--g2:#0c6e64"></span><span>PEP · PAO</span>
+      </a>
+      <a href="proyectos.html" class="float-card" style="--fx:56%; --fy:80%; --fd:0.8; --fr:2deg;   --delay:1.4s">
+        <span class="float-thumb" style="--g1:#63b3e4;--g2:#7c6cf0"></span><span>Tómbola Digital</span>
+      </a>
+
+      <div class="hero container">
+        <div class="hero-text">
+          <p class="hero-greeting"><span data-i18n="hero.greeting">Hola, soy</span></p>
+          <h1 class="hero-name">
+            Manuel&nbsp;Val<span class="dev-wrap"><span class="dev">DEV</span>
+              <span class="dev-tooltip" data-i18n="hero.tooltip">¿Quisiste decir Valdés?</span>
+            </span>
+          </h1>
+          <br/><br/>
+          <h2 class="hero-role" data-i18n="hero.role">Ingeniero en Desarrollo de Software</h2>
+          <p class="hero-tagline" data-i18n="hero.tagline">Full Stack, arquitectura de sistemas y metodologías ágiles. Construyo soluciones innovadoras y escalables, y no pienso dejar de aprender.</p>
+          <div class="hero-cta">
+            <a href="proyectos.html" class="btn btn-solid" data-i18n="hero.cta1">Ver proyectos</a>
+            <a href="assets/Manuel_Valdes_CV.pdf" class="btn btn-line" download data-i18n="hero.cta2">Descargar CV</a>
+          </div>
+        </div>
+
+        <!-- Gafete real, colgado de un cordón y con físicas de arrastre -->
+        <div class="badge-scene idle-sway" id="badgeScene">
+          <span class="hand-note badge-note" data-i18n="hero.note">este soy yo →</span>
+          <div class="lanyard-anchor"></div>
+          <div class="lanyard" id="lanyard"><span class="lanyard-text">VALDEV • VALDEV • VALDEV •</span></div>
+          <div class="badge" id="badge">
+            <div class="badge-clip"></div>
+            <img src="assets/gafete.png" alt="Gafete de Manuel Valdés — Software Developer, El Salvador" draggable="false" />
+          </div>
+          <p class="badge-hint hand-note" data-i18n="badge.hint">psst… jálame</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Dock global de navegación -->
+  <nav class="dock" id="dock" aria-label="Navegación rápida">
+    <a class="dock-item" href="index.html" style="--di:#0fb5a3">
+      <span class="dock-tip" data-i18n="dock.home">Inicio</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 11.2h2.6v8.3a1 1 0 0 0 1 1H10v-5.8h4v5.8h3.9a1 1 0 0 0 1-1v-8.3h2.6z"/></svg>
+    </a>
+    <a class="dock-item" href="proyectos.html" style="--di:#0c6e64">
+      <span class="dock-tip" data-i18n="dock.proyectos">Proyectos</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h3.9a2 2 0 0 1 1.42.59L12.2 6h6.3A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z"/></svg>
+    </a>
+    <a class="dock-item" href="stack.html" style="--di:#3a4149">
+      <span class="dock-tip" data-i18n="dock.stack">Stack técnico</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 6.6a5.3 5.3 0 0 1-7.1 6.7l-7 7a2.2 2.2 0 1 1-3.1-3.1l7-7a5.3 5.3 0 0 1 6.7-7.1l-2.9 2.9.8 2.7 2.7.8z"/></svg>
+    </a>
+    <a class="dock-item" href="aptitudes.html" style="--di:#7c6cf0">
+      <span class="dock-tip" data-i18n="dock.aptitudes">Aptitudes</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 2.5a2.25 2.25 0 0 0-2.25 2.25v.75H8A1.5 1.5 0 0 0 6.5 7v3.25h-.75a2.25 2.25 0 1 0 0 4.5h.75V18A1.5 1.5 0 0 0 8 19.5h3.25v-.75a2.25 2.25 0 1 1 4.5 0v.75H19a1.5 1.5 0 0 0 1.5-1.5v-3.25h-.75a2.25 2.25 0 1 1 0-4.5h.75V7A1.5 1.5 0 0 0 19 5.5h-3.25v-.75A2.25 2.25 0 0 0 13.5 2.5z"/></svg>
+    </a>
+    <a class="dock-item" href="certificaciones.html" style="--di:#c99a12">
+      <span class="dock-tip" data-i18n="dock.certs">Formación</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1.5 8 12 13l8.5-4.05V15h2V8zM5 12.9v3.6c0 1.6 3.1 3 7 3s7-1.4 7-3v-3.6l-7 3.3z"/></svg>
+    </a>
+    <a class="dock-item" href="redes.html" style="--di:#e0567c">
+      <span class="dock-tip" data-i18n="dock.redes">Contacto</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 3.5h15A1.5 1.5 0 0 1 21 5v11a1.5 1.5 0 0 1-1.5 1.5H9.2L4.4 21A.9.9 0 0 1 3 20.3V5a1.5 1.5 0 0 1 1.5-1.5z"/></svg>
+    </a>
+    <span class="dock-sep"></span>
+    <a class="dock-item" href="assets/Manuel_Valdes_CV.pdf" download style="--di:#5d6570">
+      <span class="dock-tip" data-i18n="dock.cv">Descargar CV</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 2h6.8L18 6.7V20a2 2 0 0 1-2 2H6.5a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zM12 9v6.1l2.1-2.1 1.4 1.4-4.5 4.5-4.5-4.5 1.4-1.4L10 15.1V9z" fill-rule="evenodd"/></svg>
+    </a>
+  </nav>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span class="year"></span> Manuel Alejandro Valdés Zúniga</p>
+      <div class="footer-contact">
+        <a href="tel:+50370837578">+503 7083-7578</a>
+        <a href="mailto:manuel.valdes@catolica.edu.sv">manuel.valdes@catolica.edu.sv</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

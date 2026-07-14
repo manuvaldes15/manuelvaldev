@@ -1,0 +1,216 @@
+/* ==========================================================================
+   Proyectos — folders apilados con pestañas, como la referencia
+   "proyectos.jpg" (estilo META / GOOGLE / AVANCE).
+   Cada folder define su color en --fc y su tinta en --fink (inline).
+   ========================================================================== */
+
+.folders {
+  margin-top: 3.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.folder {
+  --overlap: 26px;
+  position: relative;
+  background: var(--fc);
+  color: var(--fink);
+  border-radius: 18px;
+  margin-top: 46px; /* deja aire para la pestaña */
+  box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.25);
+  /* Textura sutil de cartón, como en la referencia */
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 26px 26px;
+  transition: translate 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.folder + .folder { margin-top: 50px; }
+
+.folder:hover { translate: 0 -3px; }
+
+/* Al abrirse, el folder se levanta suavemente y destaca sobre los demás */
+.folder.open {
+  z-index: 5;
+  animation: folder-lift 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.38);
+}
+
+@keyframes folder-lift {
+  0% { translate: 0 0; }
+  40% { translate: 0 -10px; }
+  100% { translate: 0 0; }
+}
+
+/* ---------- Pestaña ---------- */
+
+.folder-tab {
+  position: absolute;
+  top: -36px;
+  left: var(--tabx);
+  max-width: 78%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--fc);
+  color: var(--fink);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(0.85rem, 2.5vw, 1.05rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.55rem 1.3rem;
+  border-radius: 12px 12px 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+/* Curvitas en la base de la pestaña (detalle de folder real) */
+.folder-tab::before,
+.folder-tab::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle at 0 0, transparent 12px, var(--fc) 12.5px);
+}
+
+.folder-tab::before { left: -12px; transform: scaleX(-1); }
+.folder-tab::after { right: -12px; }
+
+.tab-logo { font-size: 0.9em; opacity: 0.85; }
+
+.folder-tab em {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.72em;
+  opacity: 0.75;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Resumen siempre visible (rol + fechas + chevron) ---------- */
+
+.folder-summary {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem 1.2rem;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+  padding: 1.1rem clamp(1.1rem, 4vw, 2.2rem);
+}
+
+.chev {
+  font-size: 1.1rem;
+  line-height: 1;
+  opacity: 0.8;
+  transition: rotate 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.folder.open .chev { rotate: 180deg; }
+
+/* ---------- Cuerpo desplegable ---------- */
+
+.folder-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.folder.open .folder-body { grid-template-rows: 1fr; }
+
+.folder-inner {
+  overflow: hidden;
+  padding-inline: clamp(1.1rem, 4vw, 2.2rem);
+}
+
+.folder.open .folder-inner { padding-block: 0.2rem 1.8rem; }
+
+.folder-role {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  flex: 1;
+}
+
+.folder-date {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  padding: 0.15rem 0.8rem;
+  opacity: 0.9;
+}
+
+.folder-inner ul { display: grid; gap: 0.5rem; }
+
+.folder-inner li {
+  position: relative;
+  padding-left: 1.2rem;
+  font-size: 0.95rem;
+  opacity: 0.92;
+}
+
+.folder-inner li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  opacity: 0.6;
+}
+
+.folder-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+}
+
+.folder-tags span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: color-mix(in srgb, var(--fink) 14%, transparent);
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+}
+
+/* ---------- CTA final (como el pill "¿CÓMO?" de la referencia) ---------- */
+
+.how-cta { display: flex; justify-content: center; padding-block: 3.5rem 1rem; }
+
+.pill-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  padding: 0.8rem 1.8rem;
+  transition: background 0.25s, color 0.25s, gap 0.25s;
+}
+
+.pill-cta:hover { background: var(--ink); color: var(--bg); gap: 1.3rem; }
+
+.pill-arrow { font-size: 1.2em; line-height: 1; }
+
+/* En modo claro los folders proyectan sombra más definida */
+html[data-theme="light"] .folder { box-shadow: 0 -10px 24px rgba(25, 27, 30, 0.18); }
+
+/* Pestañas en pantallas pequeñas: siempre visibles y sin desbordar */
+@media (max-width: 620px) {
+  .folder-tab { left: 4%; max-width: 90%; }
+  .folder + .folder { margin-top: 46px; }
+}

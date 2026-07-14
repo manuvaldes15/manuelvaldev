@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formación — Manuel ValDEV</title>
+  <meta name="description" content="Certificaciones y formación académica de Manuel Valdés: KODIGO, UDEMY, CISCO, Universidad Católica de El Salvador." />
+  <link rel="icon" type="image/png" href="assets/avatar-head.png" />
+  <script>
+    document.documentElement.dataset.theme =
+      localStorage.getItem("valdev-theme") ||
+      (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  </script>
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/certificaciones.css" />
+</head>
+<body class="certs-page has-dock">
+
+  <header class="site-nav">
+    <div class="nav-inner container">
+      <a href="index.html" class="brand">Val<span>DEV</span></a>
+      <nav class="nav-links">
+        <a href="proyectos.html" data-i18n="nav.proyectos">Proyectos</a>
+        <a href="stack.html" data-i18n="nav.stack">Stack</a>
+        <a href="aptitudes.html" data-i18n="nav.aptitudes">Aptitudes</a>
+        <a href="certificaciones.html" data-i18n="nav.certs">Formación</a>
+        <a href="redes.html" data-i18n="nav.redes">Contacto</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Cambiar tema"></button>
+        <button id="langToggle" class="lang-toggle" aria-label="Cambiar idioma">
+          <span class="lang-opt" data-lang="es">ES</span>/<span class="lang-opt" data-lang="en">EN</span>
+        </button>
+        <button id="menuBtn" class="icon-btn menu-btn" aria-label="Menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="page-head centered">
+        <p class="page-kicker" data-i18n="c.kicker">El camino recorrido</p>
+        <h1 class="page-title"><span class="hand-note title-hand">mi</span> <span data-i18n="c.title">Formación</span></h1>
+        <p class="page-sub" data-i18n="c.sub">Certificaciones y estudios, en orden de aparición.</p>
+      </div>
+
+      <!-- Camino serpenteante: un solo trazo SVG que cambia de color por año -->
+      <div class="snake" id="snake">
+        <svg class="snake-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <path class="seg" d="M 18 1 C 88 5, 97 20, 50 25" style="--c:#d9a413" />
+          <path class="seg" d="M 50 25 C 3 30, 3 45, 50 50" style="--c:#7c6cf0" />
+          <path class="seg" d="M 50 50 C 97 55, 97 70, 50 75" style="--c:#2fa96e" />
+          <path class="seg" d="M 50 75 C 3 80, 3 97, 56 99" style="--c:#e0567c" />
+        </svg>
+
+        <section class="mile" style="--c:#d9a413">
+          <span class="mile-year hand-note year-right">2022</span>
+          <div class="cert-card" style="--tilt:-1.5deg">
+            <h3>Workeys — Oportunidades FGK</h3>
+            <p>Capacitación para el empleo · Programa Oportunidades</p>
+            <span class="cert-year">2022</span>
+          </div>
+        </section>
+
+        <section class="mile mile-end" style="--c:#7c6cf0">
+          <span class="mile-year hand-note year-left">2023</span>
+          <div class="cert-card" style="--tilt:1.4deg">
+            <h3>Certificación Linux Unhatched</h3>
+            <p>CISCO</p>
+            <span class="cert-year">2023</span>
+          </div>
+        </section>
+
+        <section class="mile" style="--c:#2fa96e">
+          <span class="mile-year hand-note year-right">2024</span>
+          <div class="cert-card" style="--tilt:1.6deg">
+            <h3>Creación de los procesos CRUD</h3>
+            <p>UDEMY</p>
+            <span class="cert-year">2024</span>
+          </div>
+          <div class="cert-card" style="--tilt:-1.2deg">
+            <h3>Diseño, desarrollo y publicación de una página web</h3>
+            <p>DOMESTIKA</p>
+            <span class="cert-year">2024</span>
+          </div>
+        </section>
+
+        <section class="mile mile-end" style="--c:#e0567c">
+          <span class="mile-year hand-note year-left">2025</span>
+          <div class="cert-card" style="--tilt:-1.6deg">
+            <h3>Desarrollador JAVA 22</h3>
+            <p>KODIGO</p>
+            <span class="cert-year">2025</span>
+          </div>
+          <div class="cert-card" style="--tilt:1.3deg">
+            <h3>C# — Curso completo para ser programador .NET</h3>
+            <p>UDEMY</p>
+            <span class="cert-year">2025</span>
+          </div>
+        </section>
+      </div>
+
+      <!-- Educación formal -->
+      <section class="edu reveal">
+        <h2 class="edu-title" data-i18n="c.edu.title">Educación</h2>
+        <div class="edu-grid">
+          <article class="edu-card">
+            <span class="edu-years">2022 — 2026</span>
+            <h3>Universidad Católica de El Salvador</h3>
+            <p data-i18n="c.edu.1.deg">Ingeniería en Desarrollo de Software</p>
+            <span class="edu-badge" data-i18n="c.edu.1.status">Egresado</span>
+          </article>
+          <article class="edu-card">
+            <span class="edu-years">2019 — 2021</span>
+            <h3>Complejo Educativo Católico "María Auxiliadora"</h3>
+            <p data-i18n="c.edu.2.deg">Bachillerato General</p>
+          </article>
+          <article class="edu-card">
+            <span class="edu-years">2019 — 2021</span>
+            <h3>Programa Oportunidades FGK</h3>
+            <p data-i18n="c.edu.3.deg">Formación académica (becado)</p>
+            <span class="edu-badge alt">Fundación Gloria de Kriete</span>
+          </article>
+        </div>
+      </section>
+
+      <!-- Voluntariado -->
+      <section class="volunteer reveal">
+        <div class="volunteer-card">
+          <span class="volunteer-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.7-4.9-10.2-9.5C.2 8.4 2.2 4.8 5.7 4.8c2 0 3.4 1.1 4.3 2.6.9-1.5 2.3-2.6 4.3-2.6 3.5 0 5.5 3.6 3.9 6.7C15.7 16.1 12 21 12 21z"/></svg></span>
+          <div>
+            <h2 data-i18n="v.title">Voluntariado</h2>
+            <h3>Club LEO El Salvador</h3>
+            <p data-i18n="v.desc">Servicio humanitario en comunidades salvadoreñas: apoyo directo a quienes más lo necesitan, como parte del movimiento juvenil de Lions Clubs International.</p>
+            <ul class="volunteer-chips">
+              <li data-i18n="v.c1">Campañas de diabetes</li>
+              <li data-i18n="v.c2">Campañas de la vista</li>
+              <li data-i18n="v.c3">Apoyo a la tercera edad</li>
+              <li data-i18n="v.c4">Campañas de juguetes</li>
+              <li data-i18n="v.c5">Alimentación a personas necesitadas</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Dock global de navegación -->
+  <nav class="dock" id="dock" aria-label="Navegación rápida">
+    <a class="dock-item" href="index.html" style="--di:#0fb5a3">
+      <span class="dock-tip" data-i18n="dock.home">Inicio</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 11.2h2.6v8.3a1 1 0 0 0 1 1H10v-5.8h4v5.8h3.9a1 1 0 0 0 1-1v-8.3h2.6z"/></svg>
+    </a>
+    <a class="dock-item" href="proyectos.html" style="--di:#0c6e64">
+      <span class="dock-tip" data-i18n="dock.proyectos">Proyectos</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h3.9a2 2 0 0 1 1.42.59L12.2 6h6.3A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z"/></svg>
+    </a>
+    <a class="dock-item" href="stack.html" style="--di:#3a4149">
+      <span class="dock-tip" data-i18n="dock.stack">Stack técnico</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 6.6a5.3 5.3 0 0 1-7.1 6.7l-7 7a2.2 2.2 0 1 1-3.1-3.1l7-7a5.3 5.3 0 0 1 6.7-7.1l-2.9 2.9.8 2.7 2.7.8z"/></svg>
+    </a>
+    <a class="dock-item" href="aptitudes.html" style="--di:#7c6cf0">
+      <span class="dock-tip" data-i18n="dock.aptitudes">Aptitudes</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 2.5a2.25 2.25 0 0 0-2.25 2.25v.75H8A1.5 1.5 0 0 0 6.5 7v3.25h-.75a2.25 2.25 0 1 0 0 4.5h.75V18A1.5 1.5 0 0 0 8 19.5h3.25v-.75a2.25 2.25 0 1 1 4.5 0v.75H19a1.5 1.5 0 0 0 1.5-1.5v-3.25h-.75a2.25 2.25 0 1 1 0-4.5h.75V7A1.5 1.5 0 0 0 19 5.5h-3.25v-.75A2.25 2.25 0 0 0 13.5 2.5z"/></svg>
+    </a>
+    <a class="dock-item" href="certificaciones.html" style="--di:#c99a12">
+      <span class="dock-tip" data-i18n="dock.certs">Formación</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1.5 8 12 13l8.5-4.05V15h2V8zM5 12.9v3.6c0 1.6 3.1 3 7 3s7-1.4 7-3v-3.6l-7 3.3z"/></svg>
+    </a>
+    <a class="dock-item" href="redes.html" style="--di:#e0567c">
+      <span class="dock-tip" data-i18n="dock.redes">Contacto</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 3.5h15A1.5 1.5 0 0 1 21 5v11a1.5 1.5 0 0 1-1.5 1.5H9.2L4.4 21A.9.9 0 0 1 3 20.3V5a1.5 1.5 0 0 1 1.5-1.5z"/></svg>
+    </a>
+    <span class="dock-sep"></span>
+    <a class="dock-item" href="assets/Manuel_Valdes_CV.pdf" download style="--di:#5d6570">
+      <span class="dock-tip" data-i18n="dock.cv">Descargar CV</span>
+      <svg class="di" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 2h6.8L18 6.7V20a2 2 0 0 1-2 2H6.5a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zM12 9v6.1l2.1-2.1 1.4 1.4-4.5 4.5-4.5-4.5 1.4-1.4L10 15.1V9z"/></svg>
+    </a>
+  </nav>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span class="year"></span> Manuel Alejandro Valdés Zúniga</p>
+      <div class="footer-contact">
+        <a href="tel:+50370837578">+503 7083-7578</a>
+        <a href="mailto:manuel.valdes@catolica.edu.sv">manuel.valdes@catolica.edu.sv</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/shared.js"></script>
+  <script>
+    // El camino se dibuja solo a medida que entra en pantalla
+    (function drawSnake() {
+      const segs = document.querySelectorAll(".snake-svg .seg");
+      if (!segs.length) return;
+      segs.forEach((p) => {
+        const L = p.getTotalLength();
+        p.style.strokeDasharray = L;
+        p.style.strokeDashoffset = L;
+      });
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("drawn");
+              obs.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.4 }
+      );
+      document.querySelectorAll(".mile").forEach((m, i) => {
+        // cada tramo se dibuja cuando su hito correspondiente aparece
+        const seg = segs[i];
+        if (!seg) return;
+        const watcher = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                seg.classList.add("drawn");
+                watcher.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.25 }
+        );
+        watcher.observe(m);
+      });
+    })();
+  </script>
+</body>
+</html>
