@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Formación — Manuel ValDEV</title>
   <meta name="description" content="Certificaciones y formación académica de Manuel Valdés: KODIGO, UDEMY, CISCO, Universidad Católica de El Salvador." />
-  <link rel="icon" type="image/png" href="assets/avatar-head.png" />
+  <link rel="icon" type="image/png" href="assets/animacionRetrato.PNG" />
   <script>
     document.documentElement.dataset.theme =
       localStorage.getItem("valdev-theme") ||
@@ -18,7 +18,7 @@
 
   <header class="site-nav">
     <div class="nav-inner container">
-      <a href="index.html" class="brand">Val<span>DEV</span></a>
+      <a href="index.html" class="brand" aria-label="Inicio — ValDEV"><img class="brand-avatar" src="assets/animacionRetrato.PNG" alt="ValDEV" /></a>
       <nav class="nav-links">
         <a href="proyectos.html" data-i18n="nav.proyectos">Proyectos</a>
         <a href="stack.html" data-i18n="nav.stack">Stack</a>
@@ -47,10 +47,11 @@
       <!-- Camino serpenteante: un solo trazo SVG que cambia de color por año -->
       <div class="snake" id="snake">
         <svg class="snake-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-          <path class="seg" d="M 18 1 C 88 5, 97 20, 50 25" style="--c:#d9a413" />
-          <path class="seg" d="M 50 25 C 3 30, 3 45, 50 50" style="--c:#7c6cf0" />
-          <path class="seg" d="M 50 50 C 97 55, 97 70, 50 75" style="--c:#2fa96e" />
-          <path class="seg" d="M 50 75 C 3 80, 3 97, 56 99" style="--c:#e0567c" />
+          <path class="seg" d="M 18 1 C 88 4, 97 16, 50 20" style="--c:#d9a413" />
+          <path class="seg" d="M 50 20 C 3 24, 3 36, 50 40" style="--c:#7c6cf0" />
+          <path class="seg" d="M 50 40 C 97 44, 97 56, 50 60" style="--c:#2fa96e" />
+          <path class="seg" d="M 50 60 C 3 64, 3 76, 50 80" style="--c:#e0567c" />
+          <path class="seg" d="M 50 80 C 97 84, 97 97, 44 99" style="--c:#0fb5a3" />
         </svg>
 
         <section class="mile" style="--c:#d9a413">
@@ -96,6 +97,25 @@
             <h3>C# — Curso completo para ser programador .NET</h3>
             <p>UDEMY</p>
             <span class="cert-year">2025</span>
+          </div>
+        </section>
+
+        <section class="mile" style="--c:#0fb5a3">
+          <span class="mile-year hand-note year-right">2026</span>
+          <div class="cert-card" style="--tilt:-1.4deg">
+            <h3>Claude 101</h3>
+            <p>ANTHROPIC</p>
+            <span class="cert-year">2026</span>
+          </div>
+          <div class="cert-card" style="--tilt:1.5deg">
+            <h3>IA Fluency: Framework &amp; Foundations</h3>
+            <p>ANTHROPIC</p>
+            <span class="cert-year">2026</span>
+          </div>
+          <div class="cert-card" style="--tilt:-1.1deg">
+            <h3>Curso Profesional de Scrum</h3>
+            <p>PLATZI</p>
+            <span class="cert-year">2026</span>
           </div>
         </section>
       </div>

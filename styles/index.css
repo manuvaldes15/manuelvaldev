@@ -155,13 +155,37 @@
   text-align: center;
 }
 
+/* Miniatura con forma de carpeta: pestaña arriba + frente iluminado */
 .float-thumb {
-  width: 64px;
-  height: 48px;
+  position: relative;
+  width: 66px;
+  height: 46px;
   margin-inline: auto;
-  border-radius: 8px;
+  margin-top: 7px; /* deja espacio a la pestaña */
+  border-radius: 4px 9px 9px 9px;
   background: linear-gradient(135deg, var(--g1), var(--g2));
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.float-thumb::before {
+  /* pestaña de la carpeta */
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 0;
+  width: 28px;
+  height: 9px;
+  border-radius: 5px 8px 0 0;
+  background: var(--g1);
+}
+
+.float-thumb::after {
+  /* frente de la carpeta, un poco más claro para dar profundidad */
+  content: "";
+  position: absolute;
+  inset: 9px 0 0;
+  border-radius: 8px 9px 9px 9px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.06));
 }
 
 @keyframes card-bob {
@@ -175,18 +199,19 @@
   position: relative;
   justify-self: center;
   width: 280px;
-  height: 470px;
+  height: 430px;
   z-index: 4;
 }
 
 .badge-note {
   position: absolute;
-  top: 148px;
+  top: 100px;
   left: -118px;
   display: none;
 }
 
-.badge-scene.idle-sway .lanyard,
+/* El vaivén en reposo solo mueve el gafete: el cordón ahora es tan largo
+   (nace fuera de pantalla) que rotarlo separaría su punta del gancho. */
 .badge-scene.idle-sway .badge {
   animation: idle-sway 4.5s ease-in-out infinite;
   transform-origin: top center;
@@ -197,25 +222,14 @@
   50% { rotate: 2deg; }
 }
 
-.lanyard-anchor {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--card);
-  border: 2px solid var(--teal);
-  z-index: 3;
-}
-
+/* El cordón nace fuera de la pantalla (arriba) para que no se vea de dónde
+   cuelga el gafete: js/index.js recalcula top/height según el viewport. */
 .lanyard {
   position: absolute;
-  top: 7px;
+  top: -260px; /* fallback si el JS no corre; js/index.js lo ajusta */
   left: 50%;
   width: 26px;
-  height: 140px; /* coincide con REST_LANYARD en js/index.js */
+  height: 350px;
   margin-left: -13px;
   transform-origin: top center;
   background: linear-gradient(90deg, #0a4740, #0f6b60 50%, #0a4740);
@@ -240,7 +254,7 @@
 
 .badge {
   position: absolute;
-  top: 147px; /* al final del cordón en reposo */
+  top: 90px; /* al final del cordón en reposo */
   left: 50%;
   margin-left: -115px;
   width: 230px;
@@ -301,6 +315,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .float-card, .badge-scene.idle-sway .lanyard, .badge-scene.idle-sway .badge,
+  .float-card, .badge-scene.idle-sway .badge,
   .dev-tooltip, .badge-hint { animation: none; }
 }

@@ -299,8 +299,8 @@ body.has-dock { padding-bottom: 96px; }
   z-index: 90;
   display: flex;
   align-items: flex-end;
-  gap: 0.55rem;
-  padding: 0.55rem 0.8rem;
+  gap: 1rem; /* separación amplia: al magnificar, los iconos no se tocan */
+  padding: 0.55rem 0.9rem;
   border-radius: 20px;
   background: color-mix(in srgb, var(--card) 80%, transparent);
   border: 1px solid var(--line);
@@ -377,7 +377,7 @@ body.has-dock { padding-bottom: 96px; }
 .dock-item:hover .dock-tip { opacity: 1; translate: -50% 0; }
 
 @media (max-width: 520px) {
-  .dock { gap: 0.4rem; padding: 0.45rem 0.6rem; }
+  .dock { gap: 0.55rem; padding: 0.45rem 0.65rem; }
   .dock-item { width: 42px; height: 42px; border-radius: 12px; }
   .dock-item .di { width: 21px; height: 21px; }
   .dock-avatar { width: 32px; height: 32px; }

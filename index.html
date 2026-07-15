@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Manuel ValDEV — Ingeniero en Desarrollo de Software</title>
   <meta name="description" content="Portafolio de Manuel Alejandro Valdés Zúniga — Ingeniero en Desarrollo de Software. Santa Ana, El Salvador." />
-  <link rel="icon" type="image/png" href="assets/avatar-head.png" />
+  <link rel="icon" type="image/png" href="assets/animacionRetrato.PNG" />
   <script>
     /* Pinta el tema antes del primer render para evitar el destello */
     document.documentElement.dataset.theme =
@@ -19,7 +19,7 @@
 
   <header class="site-nav">
     <div class="nav-inner container">
-      <a href="index.html" class="brand">Val<span>DEV</span></a>
+      <a href="index.html" class="brand" aria-label="Inicio — ValDEV"><img class="brand-avatar" src="assets/animacionRetrato.PNG" alt="ValDEV" /></a>
       <nav class="nav-links">
         <a href="proyectos.html" data-i18n="nav.proyectos">Proyectos</a>
         <a href="stack.html" data-i18n="nav.stack">Stack</a>
@@ -42,8 +42,8 @@
       <span class="corner-note stage-corner tl">Portafolio — 2026</span>
       <span class="corner-note stage-corner tr" data-i18n="hero.loc">Santa Ana, El Salvador</span>
 
-      <!-- Tarjetas de proyectos flotando alrededor (como la referencia del collage) -->
-      <a href="proyectos.html" class="float-card" style="--fx:4%;  --fy:16%; --fd:0.5; --fr:-4deg;  --delay:0s">
+      <!-- Carpetas de proyectos flotando alrededor (como la referencia del collage) -->
+      <a href="proyectos.html" class="float-card" style="--fx:30%; --fy:84%; --fd:0.5; --fr:-4deg;  --delay:0s">
         <span class="float-thumb" style="--g1:#0fb5a3;--g2:#0c6e64"></span><span>Migración Java</span>
       </a>
       <a href="proyectos.html" class="float-card" style="--fx:24%; --fy:5%;  --fd:0.9; --fr:2deg;   --delay:0.6s">
@@ -82,7 +82,6 @@
         <!-- Gafete real, colgado de un cordón y con físicas de arrastre -->
         <div class="badge-scene idle-sway" id="badgeScene">
           <span class="hand-note badge-note" data-i18n="hero.note">este soy yo →</span>
-          <div class="lanyard-anchor"></div>
           <div class="lanyard" id="lanyard"><span class="lanyard-text">VALDEV • VALDEV • VALDEV •</span></div>
           <div class="badge" id="badge">
             <div class="badge-clip"></div>

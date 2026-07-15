@@ -102,8 +102,8 @@
     if (it.getAttribute("href") === here) it.classList.add("current");
   });
 
-  const RANGE = 110;  // px de influencia alrededor del cursor
-  const BOOST = 0.55; // cuánto crece el ícono bajo el cursor
+  const RANGE = 95;   // px de influencia alrededor del cursor
+  const BOOST = 0.45; // cuánto crece el ícono bajo el cursor (con el gap actual no llegan a tocarse)
 
   dock.addEventListener("pointermove", (e) => {
     if (e.pointerType !== "mouse") return; // en táctil no hay hover

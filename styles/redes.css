@@ -49,6 +49,27 @@
   border: 1px solid var(--line);
   box-shadow: var(--shadow-hard);
   rotate: -1.5deg;
+  /* el avatar es un PNG transparente: detrás lleva un degradado suave que
+     recorre la paleta de acentos del sitio, mezclada con el color de tarjeta
+     para que funcione en ambos temas */
+  background: linear-gradient(120deg,
+    color-mix(in srgb, var(--teal) 32%, var(--card)),
+    color-mix(in srgb, var(--sky) 32%, var(--card)),
+    color-mix(in srgb, var(--violet) 32%, var(--card)),
+    color-mix(in srgb, var(--pink) 32%, var(--card)),
+    color-mix(in srgb, var(--coral) 32%, var(--card)),
+    color-mix(in srgb, var(--yellow) 32%, var(--card)));
+  background-size: 420% 420%;
+  animation: avatar-glow 9s ease-in-out infinite;
+}
+
+@keyframes avatar-glow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .avatar-frame { animation: none; }
 }
 
 .avatar-img {
@@ -68,20 +89,42 @@
 
 .ticket {
   --paper: #fdfdfb;
+  --perf-y: 74px; /* posición de la línea perforada; el JS la mide al vuelo */
   position: relative;
   display: block;
-  background: var(--paper);
   color: #1c1e24;
   border-radius: 16px 16px 4px 4px;
   padding: 1.1rem 1.2rem 0.9rem;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
-  transition: translate 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), rotate 0.25s, box-shadow 0.25s;
+  /* drop-shadow (y no box-shadow) para que la sombra siga el contorno real
+     del ticket, incluyendo las muescas recortadas y el borde festoneado */
+  filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.22));
+  transition: translate 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), rotate 0.25s, filter 0.25s;
+}
+
+/* El papel vive en un pseudo-elemento con máscara: las muescas laterales son
+   agujeros transparentes de verdad, así ningún círculo pintado desentona
+   con la sombra ni con el fondo en modo claro. */
+.ticket::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 16px 16px 4px 4px;
+  background: var(--paper);
+  -webkit-mask-image:
+    radial-gradient(circle 9px at 0 var(--perf-y), transparent 8.5px, #000 9.5px),
+    radial-gradient(circle 9px at 100% var(--perf-y), transparent 8.5px, #000 9.5px);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    radial-gradient(circle 9px at 0 var(--perf-y), transparent 8.5px, #000 9.5px),
+    radial-gradient(circle 9px at 100% var(--perf-y), transparent 8.5px, #000 9.5px);
+  mask-composite: intersect;
 }
 
 .ticket:hover {
   translate: 0 -6px;
   rotate: -1deg;
-  box-shadow: 0 24px 44px rgba(0, 0, 0, 0.3);
+  filter: drop-shadow(0 18px 22px rgba(0, 0, 0, 0.3));
 }
 
 /* borde inferior festoneado, como el recibo de la referencia */
@@ -130,27 +173,14 @@
   overflow-wrap: anywhere;
 }
 
-/* línea perforada con muescas laterales (del color del fondo de la página) */
+/* línea perforada: las muescas laterales son agujeros reales recortados en
+   .ticket::before, aquí solo queda la línea discontinua, que se detiene
+   antes de llegar a los agujeros */
 .t-perf {
   position: relative;
   border-top: 2px dashed #d5d5cd;
-  margin-inline: -1.2rem;
+  margin-inline: calc(-1.2rem + 10px);
 }
-
-.t-perf::before,
-.t-perf::after {
-  content: "";
-  position: absolute;
-  top: -9px;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: var(--bg);
-  transition: background-color 0.35s ease;
-}
-
-.t-perf::before { left: -9px; }
-.t-perf::after { right: -9px; }
 
 .t-meta {
   display: flex;

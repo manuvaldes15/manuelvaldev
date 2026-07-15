@@ -22,8 +22,23 @@
   const hint = document.querySelector(".badge-hint");
   if (!badge || !lanyard) return;
 
-  const REST_LANYARD = 140; // largo del cordón en reposo (px) — coincide con el CSS
+  /* El cordón nace fuera de la pantalla: su largo en reposo se calcula para
+     que el punto de anclaje quede siempre por encima del viewport y no se
+     vea de dónde cuelga el gafete. */
+  let REST_LANYARD = 350;   // largo del cordón en reposo (px) — se recalcula abajo
   const MIN_STRETCH = 15;   // evita que el cordón colapse al jalar hacia arriba
+
+  function layoutCord() {
+    const sceneRect = scene.getBoundingClientRect();
+    const badgeRect = badge.getBoundingClientRect();
+    const scale = sceneRect.height / scene.offsetHeight || 1; // la escena se escala en móvil
+    const badgeTopLocal = (badgeRect.top - sceneRect.top - y * scale) / scale;
+    REST_LANYARD = Math.max(300, (badgeRect.top - y * scale + 120) / scale);
+    lanyard.style.top = `${badgeTopLocal - REST_LANYARD}px`;
+    lanyard.style.height = `${REST_LANYARD}px`;
+    const text = lanyard.querySelector(".lanyard-text");
+    if (text) text.textContent = "VALDEV • ".repeat(Math.max(4, Math.ceil(REST_LANYARD / 68)));
+  }
 
   const STIFFNESS = 130;    // rigidez del resorte (1/s²)
   const DAMPING = 7;        // amortiguación (1/s) — subamortiguado: rebota
@@ -38,6 +53,9 @@
   let grabX = 0, grabY = 0; // dónde se agarró
   let lastT = 0;
   let rafId = null;
+
+  layoutCord();
+  addEventListener("resize", () => { if (mode === "idle") layoutCord(); });
 
   function render() {
     // Geometría del cordón: del ancla al gancho del gafete

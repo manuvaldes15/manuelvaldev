@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contacto — Manuel ValDEV</title>
   <meta name="description" content="Contacta a Manuel Valdés: GitHub, LinkedIn, Instagram, correo y teléfono." />
-  <link rel="icon" type="image/png" href="assets/avatar-head.png" />
+  <link rel="icon" type="image/png" href="assets/animacionRetrato.PNG" />
   <script>
     document.documentElement.dataset.theme =
       localStorage.getItem("valdev-theme") ||
@@ -18,7 +18,7 @@
 
   <header class="site-nav">
     <div class="nav-inner container">
-      <a href="index.html" class="brand">Val<span>DEV</span></a>
+      <a href="index.html" class="brand" aria-label="Inicio — ValDEV"><img class="brand-avatar" src="assets/animacionRetrato.PNG" alt="ValDEV" /></a>
       <nav class="nav-links">
         <a href="proyectos.html" data-i18n="nav.proyectos">Proyectos</a>
         <a href="stack.html" data-i18n="nav.stack">Stack</a>
@@ -49,6 +49,10 @@
         <div class="contact-copy">
           <h1 class="contact-title" data-i18n="r.title">¿Hablamos?</h1>
           <p class="contact-sub" data-i18n="r.sub">Cada red es un ticket: tómalo y te lleva directo.</p>
+
+          <div class="avatar-frame">
+            <img class="avatar-img" src="assets/animacion.PNG" alt="Avatar de Manuel Valdés" draggable="false" />
+          </div>
 
           <p class="hand-note phone-note" data-i18n="r.hand">sin llamadas spam porfa</p>
         </div>
@@ -197,5 +201,19 @@
 
   <script src="js/i18n.js"></script>
   <script src="js/shared.js"></script>
+  <script>
+    // Mide dónde queda la línea perforada de cada ticket y se lo pasa al CSS
+    // (--perf-y) para que las muescas recortadas caigan exactamente sobre ella.
+    (function placeNotches() {
+      const tickets = document.querySelectorAll(".ticket");
+      if (!tickets.length) return;
+      function place(t) {
+        const perf = t.querySelector(".t-perf");
+        if (perf) t.style.setProperty("--perf-y", `${perf.offsetTop + 1}px`);
+      }
+      const ro = new ResizeObserver((entries) => entries.forEach((e) => place(e.target)));
+      tickets.forEach((t) => { place(t); ro.observe(t); });
+    })();
+  </script>
 </body>
 </html>
