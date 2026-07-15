@@ -33,7 +33,14 @@
     const badgeRect = badge.getBoundingClientRect();
     const scale = sceneRect.height / scene.offsetHeight || 1; // la escena se escala en móvil
     const badgeTopLocal = (badgeRect.top - sceneRect.top - y * scale) / scale;
-    REST_LANYARD = Math.max(300, (badgeRect.top - y * scale + 120) / scale);
+    /* En dos columnas (≥900px) el gafete está junto al texto y el cordón
+       puede subir hasta fuera del viewport. En una columna el gafete queda
+       DEBAJO del texto: un cordón tan largo taparía la información, así que
+       nace apenas encima de la escena y se desvanece (mask en el CSS). */
+    const wide = matchMedia("(min-width: 900px)").matches;
+    REST_LANYARD = wide
+      ? Math.max(300, (badgeRect.top - y * scale + 120) / scale)
+      : badgeTopLocal + 26;
     lanyard.style.top = `${badgeTopLocal - REST_LANYARD}px`;
     lanyard.style.height = `${REST_LANYARD}px`;
     const text = lanyard.querySelector(".lanyard-text");

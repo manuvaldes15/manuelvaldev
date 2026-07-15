@@ -226,10 +226,10 @@
    cuelga el gafete: js/index.js recalcula top/height según el viewport. */
 .lanyard {
   position: absolute;
-  top: -260px; /* fallback si el JS no corre; js/index.js lo ajusta */
+  top: -26px; /* fallback corto si el JS no corre; js/index.js lo ajusta */
   left: 50%;
   width: 26px;
-  height: 350px;
+  height: 116px;
   margin-left: -13px;
   transform-origin: top center;
   background: linear-gradient(90deg, #0a4740, #0f6b60 50%, #0a4740);
@@ -301,6 +301,15 @@
 }
 
 /* ---------- Responsive ---------- */
+
+/* En una columna (móvil/tablet) el cordón es corto y su punta superior se
+   desvanece: parece venir "de la nada" en vez de cruzar el texto del hero. */
+@media (max-width: 899.98px) {
+  .lanyard {
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 72px);
+    mask-image: linear-gradient(to bottom, transparent, #000 72px);
+  }
+}
 
 @media (min-width: 900px) {
   .hero { grid-template-columns: 1.15fr 0.85fr; }
